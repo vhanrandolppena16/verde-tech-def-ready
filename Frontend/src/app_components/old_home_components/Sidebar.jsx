@@ -19,7 +19,7 @@ import LiveTvIcon from "@mui/icons-material/LiveTv";
 
 import "./Sidebar.css";
 import { useNavigate } from "react-router";
-import { authentication } from "../../../../firebase/firebase";
+import { authentication } from "../../firebase/firebase";
 
 const Sidebar = ({ setNavigationText, collapsed, setCollapsed }) => {
   const navigate = useNavigate();
