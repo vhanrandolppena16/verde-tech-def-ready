@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "./verde_frontend/firebase/app"; // Firebase initialization
-import { getAuth } from "./verde_frontend/firebase/auth"; // Firebase authentication function     
-import { getFirestore } from "./verde_frontend/firebase/firestore"; // ✅ Firestore added
+import { initializeApp } from "firebase/app"; // Firebase initialization
+import { getAuth } from "firebase/auth"; // Firebase authentication function     
+import { getFirestore } from "firebase/firestore"; // ✅ Firestore added
 // import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
