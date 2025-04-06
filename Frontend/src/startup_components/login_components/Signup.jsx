@@ -58,7 +58,7 @@ const SignUp = () => {
         email: user.email,
         company: company,
         username: username,
-        password: user.password // Delete when deployed
+        // password: user.password // Delete when deployed
         // Password should not be stored here
       });
 
