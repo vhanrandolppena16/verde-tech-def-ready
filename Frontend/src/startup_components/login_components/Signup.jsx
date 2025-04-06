@@ -57,7 +57,7 @@ const SignUp = () => {
       await setDoc(doc(db, "Users", user.uid), {
         email: user.email,
         company: company,
-        username: username,
+        username: username
         // password: user.password // Delete when deployed
         // Password should not be stored here
       });
