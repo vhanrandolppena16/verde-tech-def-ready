@@ -8,7 +8,7 @@ const NavigationDisplay = forwardRef(({ text }, ref) => (
   <div 
   ref={ref} // ✅ attach ref
   className="
-    bg-red-600                          // Bright red background
+    bg-[#2b6340]                          // Bright red background
     h-[60%]                             // 60% of nav bar height
     flex items-center justify-center    // Centers text inside
     px-6                                // Horizontal padding

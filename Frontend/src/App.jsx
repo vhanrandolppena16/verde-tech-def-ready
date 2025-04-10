@@ -13,14 +13,18 @@ import SignUp from "./startup_components/login_components/Signup";          // S
 
 // import Home from "./app_components/FinalHome";                           // Main component shown after login (dashboard, etc.)
 import Home from "./app_components/Home";                           // Main component shown after login (dashboard, etc.)
+import Dashboard from "./app_components/home_components/content_components/Dashboard";
+import PredictionTrends from "./app_components/home_components/content_components/analysis_components/PredictionTrends";
+import Dataset from "./app_components/home_components/content_components/Dataset"
+import AccountPage from "./app_components/home_components/content_components/Account"
+import AboutPage from "./app_components/home_components/content_components/About"
+import LiveStreamPage from "./app_components/home_components/content_components/LiveStream"
 
 // Main App component
 function App() {
   return (
     <>
       {/* Rendering the AppBackground component to set the background visuals */}
-      <AppBackground />
-
       <Routes>
         <Route path="/" element={<AuthLayout />}>                          
           <Route path="/" element={<WelcomeScreen />} />  {/* Welcome screen route (root path) */}
@@ -28,7 +32,19 @@ function App() {
           <Route path="/signup" element={<SignUp />} />   {/* Sign Up screen route */}
         </Route>
 
-        <Route path='/dashboard' element={<Home />}/>
+        <Route path='/' element={<Home/>}>
+          <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path='/analysis' element={<PredictionTrends />}/>
+          <Route path='/dataset' element={<Dataset />}/>
+          <Route path='/control'/>
+          <Route path='/logs'/>
+          <Route path='/account' element={<AccountPage />}/>
+          <Route path='/about' element={<AboutPage />}/>
+          <Route path='/livestream' element={<LiveStreamPage />}/>
+          <Route path='/logout'/> 
+        </Route>
+
+        {/* <Route path='/dashboard' element={<Home />}/>
         <Route path='/analysis' element={<Home />}/>
         <Route path='/dataset' element={<Home />}/>
         <Route path='/control' element={<Home />}/>
@@ -36,7 +52,7 @@ function App() {
         <Route path='/account' element={<Home />}/>
         <Route path='/about' element={<Home />}/>
         <Route path='/livestream' element={<Home />}/>
-        <Route path='/logout' element={<Home />}/>
+        <Route path='/logout' element={<Home />}/> */}
 
       </Routes>
 

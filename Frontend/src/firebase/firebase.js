@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app"; // Firebase initialization
 import { getAuth } from "firebase/auth"; // Firebase authentication function     
 import { getFirestore } from "firebase/firestore"; // ✅ Firestore added
+
 // import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
