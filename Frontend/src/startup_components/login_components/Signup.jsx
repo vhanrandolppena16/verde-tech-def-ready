@@ -63,6 +63,7 @@ const SignUp = () => {
       });
 
       console.log("Company:", company); // Log company name will be removed
+      navigate("/login"); // Navigate to login
 
     } catch (error) {
       // Log and show error
@@ -70,17 +71,6 @@ const SignUp = () => {
       alert("Error during sign up: " + error.message);
     }
   };
-
-  // Redirect if user is already logged in
-  useEffect(() => {
-    const unsubscribe = authentication.onAuthStateChanged((user) => {
-      if (user) {
-        navigate("/login"); // Navigate to login
-      }
-    });
-
-    return () => unsubscribe(); // Clean up listener
-  }, []);
 
   // Render UI
   return (

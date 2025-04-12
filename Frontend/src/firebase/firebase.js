@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app"; // Firebase initialization
 import { getAuth } from "firebase/auth"; // Firebase authentication function     
 import { getFirestore } from "firebase/firestore"; // ✅ Firestore added
+import { getDatabase } from "firebase/database";
 
 // import { getAnalytics } from "firebase/analytics";
 
@@ -11,21 +12,24 @@ import { getFirestore } from "firebase/firestore"; // ✅ Firestore added
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCju2klDAmeY06gRGubdAsEXMyFGREM0Lg",
-  authDomain: "verde-user-login-db.firebaseapp.com",
-  projectId: "verde-user-login-db",
-  storageBucket: "verde-user-login-db.firebasestorage.app",
-  messagingSenderId: "152409376214",
-  appId: "1:152409376214:web:c4efdd172810300c221077",
-  measurementId: "G-0SHPCF7ME7"
+  apiKey: "AIzaSyCHZmyvEX7rAeUPzWMArBYayjTZeuoDwHU",
+  authDomain: "team48-verde-995e4.firebaseapp.com",
+  databaseURL: "https://team48-verde-995e4-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "team48-verde-995e4",
+  storageBucket: "team48-verde-995e4.firebasestorage.app",
+  messagingSenderId: "547321663259",
+  appId: "1:547321663259:web:740e54b402d13c979acdbe",
+  measurementId: "G-B26C05NC7Q"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const authentication = getAuth(app);
 const db = getFirestore(app);
+const rtdb = getDatabase(app);
+
 // const analytics = getAnalytics(app);
 
 // export authentication for checking of credentials
 // export db for storing Company Name and Username
-export { authentication, db }; 
+export { authentication, db, rtdb }; 
