@@ -98,7 +98,7 @@ const AccountPage = () => {
   };
 
   return (
-    <div className="p-6 max-w-2xl mx-auto bg-white rounded-3xl shadow-xl">
+    <div className="p-6 max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-y-auto">
       <div className="flex flex-col items-center">
         {previewUrl ? (
           <img src={previewUrl} alt="Profile" className="w-28 h-28 rounded-full object-cover" />

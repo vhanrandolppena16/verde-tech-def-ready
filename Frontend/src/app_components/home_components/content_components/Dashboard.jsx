@@ -1,105 +1,107 @@
-//Dashboard.jsx
 import React from 'react';
+import Gauge from "./dashboard_component/Gauge";
+import GrowthStage from "../../../assets/images/lettuce-growing-timeline.png";
 
 const Dashboard = () => {
   return (
-    // 🧩 Main dashboard grid layout
     <div
       className="
-        grid                 // Use CSS grid layout
-        grid-cols-1         // Single column on small screens
-        xl:grid-cols-3      // 3 columns on extra-large screens
-        gap-6               // Gap between grid items
-        p-6                 // Padding around the dashboard
-    min-h-[590px]        // ✅ Optional: Set a taller minimum height
-    max-h-full           // Respect the 620px from parent
+        grid grid-cols-1 xl:grid-cols-3 gap-6 p-6
+        min-h-[590px] max-h-full
       "
     >
       {/* 🔵 Gauges Container */}
       <div
         className="
-          grid               // Inner grid for gauge cards
-          grid-cols-2        // Two columns
-          gap-4              // Space between gauge cards
-          bg-white           // White background for container
-          rounded-2xl        // Large rounded corners
-          p-4                // Padding inside
-          shadow-md          // Subtle shadow for elevation
-          xl:col-span-2      // Span 2 columns on XL screens
+          grid grid-cols-2 gap-4 bg-white rounded-2xl p-4 shadow-md
+          xl:col-span-2
         "
       >
         {/* 🌡️ Temperature Gauge */}
-        <div
-          className="
-            flex flex-col               // Stack items vertically
-            items-center justify-center // Center content
-            bg-blue-50                 // Light blue background
-            rounded-xl                 // Rounded corners
-            p-6                        // Padding inside
-            shadow                     // Basic shadow
-          "
-        >
-          <span className="text-xl font-semibold mb-2">Temperature</span>
-          <div className="text-3xl font-bold">0°C</div>
-        </div>
+        <Gauge
+          name="Temperature"
+          min={0}
+          max={50}
+          value={24}
+          unit="°C"
+          customRanges={[
+            { stop: 0, color: "blue" },
+            { stop: 15, color: "green" },
+            { stop: 30, color: "red" },
+            { stop: 50, color: "red" },
+          ]}
+        />
 
         {/* 💧 Humidity Gauge */}
-        <div
-          className="
-            flex flex-col items-center justify-center
-            bg-blue-50 rounded-xl p-6 shadow
-          "
-        >
-          <span className="text-xl font-semibold mb-2">Humidity</span>
-          <div className="text-3xl font-bold">0%</div>
-        </div>
+        <Gauge
+          name="Humidity"
+          min={0}
+          max={100}
+          value={50}
+          unit="%"
+          customRanges={[
+            { stop: 0, color: "red" },
+            { stop: 30, color: "orange" },
+            { stop: 60, color: "green" },
+            { stop: 100, color: "blue" },
+          ]}
+        />
 
         {/* ⚗️ pH Gauge */}
-        <div
-          className="
-            flex flex-col items-center justify-center
-            bg-blue-50 rounded-xl p-6 shadow
-          "
-        >
-          <span className="text-xl font-semibold mb-2">pH</span>
-          <div className="text-3xl font-bold">0</div>
-        </div>
+        <Gauge
+          name="pH"
+          min={0}
+          max={14}
+          value={6.3}
+          customRanges={[
+            { stop: 0, color: "yellow" },
+            { stop: 6, color: "green" },
+            { stop: 9, color: "blue" },
+            { stop: 14, color: "blue" },
+          ]}
+        />
 
         {/* 🌊 TDS Gauge */}
-        <div
-          className="
-            flex flex-col items-center justify-center
-            bg-blue-50 rounded-xl p-6 shadow
-          "
-        >
-          <span className="text-xl font-semibold mb-2">Total Dissolved Solids</span>
-          <div className="text-3xl font-bold">0 ppm</div>
-        </div>
+        <Gauge
+          name="Total Dissolved Solids"
+          min={0}
+          max={2000}
+          value={903}
+          unit= "ppm"
+          customRanges={[
+            { stop: 0, color: "blue" },
+            { stop: 700, color: "green" },
+            { stop: 1500, color: "orange" },
+            { stop: 2000, color: "red" },
+          ]}
+        />
       </div>
 
-            {/* 📦 Right Column: Growth Stage + Camera Feed */}
-            <div className="flex flex-col gap-6">
-        {/* 🌱 Growth Stage Container */}
+      {/* 📦 Right Column: Growth Stage + Camera Feed */}
+      <div className="flex flex-col gap-6">
+        {/* 🌱 Growth Stage */}
         <div
           className="
-            flex items-center justify-center
-            bg-green-50 rounded-2xl p-4 shadow-md
-            h-[50%]                        // Match gauge height
+            relative flex items-center justify-center
+            bg-green-50 rounded-2xl shadow-md h-[50%]
           "
+          style={{
+            backgroundImage: `url(${GrowthStage})`,
+            backgroundSize: "95% 90%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
         >
-          <img
-            src="/growth_stage.png"
-            alt="Growth Stage"
-            className="w-full h-full object-contain"
-          />
+          <h2 className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-green-100 h2x-4 py-1 rounded-md text-sm font-2xl shadow">
+            Prediction Results
+          </h2>
         </div>
 
-        {/* 📷 Camera Feed Container */}
+        {/* 📷 Camera Feed */}
         <div
           className="
             flex items-center justify-center
-            bg-white rounded-2xl p-4 shadow-md
-            h-[50%]                        // Match gauge height
+            bg-white rounded-2xl p-4 shadow-md h-[50%]
           "
         >
           <img
@@ -109,7 +111,6 @@ const Dashboard = () => {
           />
         </div>
       </div>
-
     </div>
   );
 };

@@ -17,7 +17,6 @@ const HydroponicBackground = ({ collapsed }) => {
         className={`
           absolute top-0 left-0 h-full w-full
           bg-cover bg-center bg-no-repeat
-          -z-10
         `}
         style={{
           backgroundImage: "url('/src/assets/images/hydroponics2.jpg')",
@@ -25,7 +24,7 @@ const HydroponicBackground = ({ collapsed }) => {
       />
 
       {/* ✅ Reduced Outlet container height */}
-      <div className="relative top-20 z-20 w-full max-h-[620px] h-full p-6 overflow-hidden">
+      <div className="relative top-20 z-20 w-full max-h-[620px] h-full p-6 overflow-y-auto">
           <Outlet />
       </div>
 
