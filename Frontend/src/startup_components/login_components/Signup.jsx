@@ -21,7 +21,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    document.title = "Sign Up | Hydroponics";
+    document.title = "Sign Up | Verde";
   }, []);
 
   // Function to handle signup logic

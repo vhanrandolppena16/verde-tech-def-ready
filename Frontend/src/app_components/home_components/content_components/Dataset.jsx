@@ -45,6 +45,10 @@ const SensorTable = () => {
     setStartDate(now);
   };
 
+  useEffect(() => {
+    document.title = "Dataset | Verde";
+  }, []);
+
   return (
     <div className="p-6 overflow-auto">
       <div className="flex justify-between items-center mb-4">

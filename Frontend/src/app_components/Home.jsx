@@ -14,6 +14,10 @@ function Home() {
   const [navigationText, setNavigationText] = useState("Dashboard");
   const [collapsed, setCollapsed] = useState(false);
 
+  useEffect(() => {
+      document.title = "Dashboard | Hydroponics";
+    }, []);
+
   return (
     <>
       <div className="

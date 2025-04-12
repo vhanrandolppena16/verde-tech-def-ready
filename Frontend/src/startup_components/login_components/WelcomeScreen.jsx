@@ -6,7 +6,7 @@ const WelcomeScreen = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-      document.title = "Welcome | Hydroponics";
+      document.title = "Welcome | Verde";
     }, []);
   
   

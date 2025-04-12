@@ -34,6 +34,10 @@ const Dashboard = () => {
       }
     });
 
+    useEffect(() => {
+      document.title = "Dashboard | Verde";
+    }, []);
+
     // Cleanup listener when the component is unmounted
     return () => {
       // Detach the listener when the component is unmounted to prevent memory leaks

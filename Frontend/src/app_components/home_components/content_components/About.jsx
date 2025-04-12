@@ -26,6 +26,10 @@ const teamMembers = [
 ];
 
 const AboutPage = () => {
+  useEffect(() => {
+      document.title = "About | Verde";
+    }, []);
+
   return (
     <div className="p-6 max-w-4xl mx-auto bg-white bg-opacity-90 rounded-3xl shadow-xl text-center">
       <h2 className="text-2xl font-bold mb-6">TEAM 48</h2>

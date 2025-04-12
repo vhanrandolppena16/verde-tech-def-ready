@@ -12,14 +12,13 @@ import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCHZmyvEX7rAeUPzWMArBYayjTZeuoDwHU",
-  authDomain: "team48-verde-995e4.firebaseapp.com",
-  databaseURL: "https://team48-verde-995e4-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "team48-verde-995e4",
-  storageBucket: "team48-verde-995e4.firebasestorage.app",
-  messagingSenderId: "547321663259",
-  appId: "1:547321663259:web:740e54b402d13c979acdbe",
-  measurementId: "G-B26C05NC7Q"
+  apiKey: "AIzaSyBpDp4pPn9ucNzO9wmYPhNyb0_qjiZU3AM",
+  authDomain: "team48-verde-c2395.firebaseapp.com",
+  databaseURL: "https://team48-verde-c2395-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "team48-verde-c2395",
+  storageBucket: "team48-verde-c2395.firebasestorage.app",
+  messagingSenderId: "256046721455",
+  appId: "1:256046721455:web:64a9a42b96512639f7275a"
 };
 
 // Initialize Firebase
