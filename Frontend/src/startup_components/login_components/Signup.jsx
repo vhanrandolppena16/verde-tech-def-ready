@@ -3,7 +3,7 @@
 // Importing Libraries
 import React, { useState, useEffect } from 'react';             // Import React and its hooks
 import { useNavigate } from "react-router-dom";                 // Import useNavigate hook for programmatic navigation
-import { createUserWithEmailAndPassword } from "firebase/auth"; // Import Firebase method to create users with email & password
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth"; // Import Firebase method to create users with email & password
 import { doc, setDoc } from "firebase/firestore";               // Import Firestore methods to set document
 
 // Importing Other Resources
@@ -67,8 +67,9 @@ const SignUp = () => {
       });
 
       console.log("Company:", company); // Log company name will be removed
-      navigate("/login"); // Navigate to login
-
+      await signOut(authentication); // Force logout
+      navigate("/login");
+      
     } catch (error) {
       // Log and show error
       console.log("Sign up error:", error);
