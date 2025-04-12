@@ -1,8 +1,14 @@
 // WelcomeScreen.jsx
+import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 const WelcomeScreen = () => {
     const navigate = useNavigate();
+    
+    useEffect(() => {
+      document.title = "Login | Hydroponics";
+    }, []);
+  
   
     return (
       <>

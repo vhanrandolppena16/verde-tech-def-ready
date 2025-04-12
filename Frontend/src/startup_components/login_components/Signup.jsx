@@ -20,6 +20,10 @@ const SignUp = () => {
   const [username, setUsername] = useState(""); // Probably separate it into Firstname Lastname
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    document.title = "Sign Up | Hydroponics";
+  }, []);
+
   // Function to handle signup logic
   const handleSignUp = async () => {
     // Check if any field is empty
